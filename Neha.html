@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        input {
+            border-bottom: 1px solid orange;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+        }
+        
+        table {
+            border-top: 1px solid orange;
+        }
+        
+        table td {
+            border-top: 1px solid orange;
+        }
+    </style>
+
+</head>
+
+<body background="ecom-07.png" style="background-repeat: no-repeat;background-size: cover;">
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <h3>Billing Information</h3>
+                <input type="text" placeholder="">
+                <br>
+                <input type="text">
+                <br>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="convettohtml-05.png">
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <h3>shipping Information</h3>
+                <input type="text" \ placeholder="">
+                <br>
+                <input type="text">
+                <br>
+                <input type="text" name="">
+            </div>
+        </div>
+        <span style="font-size: 20px;">Hello,<input type="text" style="border-bottom: 1px solid orange;border-top:none;border-right:none;border-left:none;"></span>
+        <h3>There is new order placed from main website store.</h3>
+        <h3>The order detai is below.thank you again for  your bussiness.</h3>
+        <div class="alert alert-info" style="background-color: orange;height: 60px;">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="" style="width: 100%;">
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <br>
+        <!-- <div class="row">
+
+<form>
+<div class="col-md-3">
+        <input type="text" id="name" placeholder="Product">
+        </div>
+        <div class="col-md-3">
+        <input type="text" id="email" placeholder="SKU">
+        </div>
+        <div class="col-md-2">
+          <input type="text" id="qty" placeholder="Qty">
+          </div>
+          <div class="col-md-2">
+        <input type="text" id="SubTotal" placeholder="SubTotal">
+        </div>
+        <div class="col-md-2">
+      <input type="button" class="add-row" value="add" style="background-color: orange;width: 100%;">
+  </div>
+    </form>
+
+    </div> -->
+        <br>
+        <br>
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Product</th>
+                    <th>SKU</th>
+                    <th>Qty</th>
+                    <th>SubTotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid orange;">
+                    <td>
+                        <input type="checkbox" name="record">
+                    </td>
+                    <td>1product</td>
+                    <td>12345</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-7"><img src=""></div>
+            <div class="col-md-2">
+                <td><span>subtotal</span>
+                    <br/><span>Grand Total</span>
+                    <br/><span>Grand total(Earned)</span>
+                      <br/><span>Commission Fee</span>
+                    <br/><span>Net Earned</span>
+                    <br/>
+                </td>
+            </div>
+            <div class="col-md-3">
+                <td>
+                    <input type="text" name="">
+                    <br/>
+                    <input type="text" name="">
+                    <br/>
+                    <input type="text" name="">
+                    </br>
+                    <input type="text" name="">
+                    <br/>
+                    <input type="text" name="">
+                </td>
+            </div>
+        </div>
+        <button type="button" class="delete-row" style="background-color: orange;">Delete Row</button>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-6">
+                <img src="convettohtml-06.png">
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".add-row").click(function() {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var qty = $("#qty").val();
+                var SubTotal = $("#SubTotal").val();
+                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td><td>" + qty + "</td><td>" + SubTotal + "</td></tr>";
+                $("table tbody").append(markup);
+            });
+            // Find and remove selected table rows
+            $(".delete-row").click(function() {
+                $("table tbody").find('input[name="record"]').each(function() {
+                    if ($(this).is(":checked")) {
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
